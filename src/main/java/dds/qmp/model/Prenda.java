@@ -8,27 +8,15 @@ public class Prenda {
   public Material material;
   public Color colorPrimario;
   public Color colorSecundario;
+  public Trama trama;
 
-  public Prenda(TipoDePrenda tipo, Material material, Color colorPrimario, Color colorSecundario) {
-    this.validarPrenda(tipo, material, colorPrimario);
+  public Prenda(TipoDePrenda tipo, Material material, Color colorPrimario,
+                Color colorSecundario, Trama trama) {
     this.tipo = tipo;
     this.material = material;
     this.colorPrimario = colorPrimario;
     this.colorSecundario = colorSecundario;
-  }
-
-  public void validarPrenda(TipoDePrenda tipo, Material material, Color colorPrimario) {
-    if (tipo == null) {
-      throw new PrendaInvalidaException("Prenda sin tipo");
-    }
-
-    if (material == null) {
-      throw new PrendaInvalidaException("Prenda sin material");
-    }
-
-    if (colorPrimario == null) {
-      throw new PrendaInvalidaException("Prenda sin color primario");
-    }
+    this.trama = trama;
   }
 
   public Categoria getCategoria() {
@@ -45,5 +33,9 @@ public class Prenda {
 
   public Color getColorSecundario() {
     return colorSecundario;
+  }
+
+  public Trama getTrama() {
+    return trama;
   }
 }
